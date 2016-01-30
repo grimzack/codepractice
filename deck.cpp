@@ -89,8 +89,9 @@ void Deck::Deal(vector<string> *ipHandA,
                 vector<string> *ipHandD,
                 vector<string> *ipHandExtra)
 {
-    while ( !(playDeck.isEmpty()) )
+    while ( !(playDeck.empty()) )
     {
-
+        ipHandA->push_back(playDeck.top());
+        playDeck.pop();
     }
 }
