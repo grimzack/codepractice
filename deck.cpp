@@ -48,29 +48,49 @@ Deck::Deck()
     cards[21] = "Jd";
     cards[22] = "10d";
     cards[23] = "9d";
-
-    Shuffle();
 }
 
 // Put the cards into random order
 void Deck::Shuffle()
 {
-    int randCard;
-    // Put cards in random order.
-    for (int i = 0; i < 24; i++)
+    vector<string> shuffleDeck(24);
+    for (int i = 0; i < cards.size(); i++)
     {
-        randCard = rand() % 24;
-        playDeck.push((cards)[randCard]);
+        shuffleDeck[i] = cards[i];
     }
+
+    random_shuffle(shuffleDeck.begin(), shuffleDeck.end());
+
+    for (int j = 0; j < 24; j++)
+    {
+        playDeck.push(shuffleDeck[j]);
+    }
+
 }
 
 void Deck::ShowDeck()
 {
     string curCard = "";
+    string regCard = "";
     for (int i = 0; i < 24; i++)
     {
         curCard = playDeck.top();
-        cout << "Card: " << i << " = " << curCard << "\n";
+        regCard = cards[i];
+        cout << "Card#: " << i <<
+                "... Unshuffled = " << regCard <<
+                "... Shuffled = " << curCard << "\n";
         playDeck.pop();
+    }
+}
+
+void Deck::Deal(vector<string> *ipHandA,
+                vector<string> *ipHandB,
+                vector<string> *ipHandC,
+                vector<string> *ipHandD,
+                vector<string> *ipHandExtra)
+{
+    while ( !(playDeck.isEmpty()) )
+    {
+
     }
 }

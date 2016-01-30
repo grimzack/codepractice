@@ -17,7 +17,11 @@ public:
     stack<string> playDeck;
 
     void Shuffle();
-    void Deal( void * ipHandA, void * ipHandB, void * ipHandC, void * ipHandD );
+    void Deal( vector<string> * ipHandA,
+               vector<string> * ipHandB,
+               vector<string> * ipHandC,
+               vector<string> * ipHandD,
+               vector<string> * ipHandExtra);
     void ShowDeck();
 
 };

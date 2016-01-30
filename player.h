@@ -1,14 +1,21 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+#include <stdlib.h>
+#include <iostream>
+#include <vector>
+
+using namespace std;
 
 class Player
 {
 public:
     Player();
-    Player( int iSeat );
+    ~Player();
 
-    char * hand[5];
+    Player( Chair iSeat );
+
+    vector<string> * hand;
     bool isDealer;
     int seat;
 

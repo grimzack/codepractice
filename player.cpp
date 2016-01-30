@@ -1,7 +1,14 @@
 #include "player.h"
 
-Player::Player( int iSeat )
+Player::Player(Chair iSeat)
 {
-    this->seat = iSeat;
+    hand = new vector<string>(5);
+    seat = iSeat;
     isDealer = 0;
+}
+
+// Destructor
+Player::~Player()
+{
+    delete hand;
 }

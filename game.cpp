@@ -27,11 +27,28 @@ Game::~Game()
 
 void Game::Start()
 {
+    // For the first turn, north is dealer
+    north->isDealer = true;
+
+    // Play!
+    this->Play();
+}
+
+void Game::Play()
+{
     /* Steps:
      *  Shuffle cards
      *  Deal cards
      *  Take turns
      */
+    while ( (blackScore < 10) && (this->whiteScore < 10) )
+    {
+        // Shuffle cards
+        cards->Shuffle();
 
-    //
+        // Deal cards
+        cards->Deal( north->hand, east->hand, south->hand, west->hand );
+
+        //
+    }
 }
