@@ -6,6 +6,7 @@ class Player
 {
 public:
     Player();
+    Player( int iSeat );
 
     char * hand[5];
     bool isDealer;
